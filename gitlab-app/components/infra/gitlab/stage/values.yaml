@@ -626,8 +626,8 @@ global:
   ## Rails application secrets
   ## Secret created according to https://docs.gitlab.com/charts/installation/secrets#gitlab-rails-secret
   ## If allowing shared-secrets generation, this is OPTIONAL.
-  railsSecrets: {}
-    # secret:
+  railsSecrets:
+    secret: gitlab-rails-secret
 
   ## Rails generic setting, applicable to all Rails-based containers
   rails:
@@ -1271,7 +1271,7 @@ postgresql:
 ## https://docs.gitlab.com/charts/installation/secrets
 ## https://docs.gitlab.com/charts/charts/shared-secrets.html
 shared-secrets:
-  enabled: false
+  enabled: true
   rbac:
     create: true
   selfsign:
