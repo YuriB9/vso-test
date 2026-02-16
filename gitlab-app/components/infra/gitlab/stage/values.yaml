@@ -83,9 +83,8 @@ global:
     # class:
     annotations: {}
     enabled: false
-    tls: {}
-    #   enabled: true
-    #   secretName:
+    tls:
+      enabled: false # REVIEW to disable volume mount for k3s-gitlab-stage-wildcard-tls-ca
     path: /
     pathType: Prefix
 
