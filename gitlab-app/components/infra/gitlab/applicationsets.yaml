@@ -45,13 +45,13 @@ applicationsets:
         destination:
           server: '{{.url}}'
           namespace: gitlab-stage
-        syncPolicy:
-          automated:
-            prune: true
-            selfHeal: true
-          syncOptions:
-            - CreateNamespace=true
-            - ServerSideApply=true
+        # syncPolicy:
+        #   automated:
+        #     prune: true
+        #     selfHeal: true
+        #   syncOptions:
+        #     - CreateNamespace=true
+        #     - ServerSideApply=true
         ignoreDifferences:
           - group: apps
             kind: Deployment
