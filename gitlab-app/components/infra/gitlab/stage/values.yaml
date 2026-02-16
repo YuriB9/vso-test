@@ -121,7 +121,7 @@ global:
   ## Secret created according to https://docs.gitlab.com/charts/installation/secrets#initial-root-password
   ## If allowing shared-secrets generation, this is OPTIONAL.
   initialRootPassword:
-    secret: init-root-creds
+    secret: init-root-creds # REVIEW not worked with shared secrets
     key: password
 
   ## https://docs.gitlab.com/charts/charts/globals#configure-postgresql-settings
@@ -355,7 +355,7 @@ global:
         # server_side_encryption:
         # server_side_encryption_kms_key_id
       connection:
-        secret: gitlab-s3-connection
+        secret: s3-creds #REVIEW
         key: connection
     lfs:
       enabled: true
@@ -505,7 +505,7 @@ global:
 
     ## https://docs.gitlab.com/charts/charts/globals#omniauth
     omniauth:
-      enabled: false
+      enabled: false #REVIEW keycloak here?
       autoSignInWithProvider:
       syncProfileFromProvider: []
       syncProfileAttributes: [email]
@@ -599,7 +599,7 @@ global:
 
   ## https://docs.gitlab.com/charts/charts/gitlab/kas/
   kas:
-    enabled: true
+    enabled: false
     service:
       apiExternalPort: 8153 # port for connections from the GitLab backend
     tls:
