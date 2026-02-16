@@ -1264,8 +1264,8 @@ postgresql:
 ## Installation & configuration charts/registry
 ## https://docs.gitlab.com/charts/architecture/decisions#registry
 ## https://docs.gitlab.com/charts/charts/registry/
-# registry:
-#   enabled: false
+registry:
+  enabled: false
 
 ## Automatic shared secret generation
 ## https://docs.gitlab.com/charts/installation/secrets
@@ -1358,15 +1358,18 @@ gitlab:
     antiAffinityLabels:
       matchLabels:
         app: gitaly
-  ## https://docs.gitlab.com/charts/charts/gitlab/migrations
-  #   migrations:
-  #     enabled: false
-  ## https://docs.gitlab.com/charts/charts/gitlab/webservice
-  #   webservice:
-  #     enabled: false
-  ## https://docs.gitlab.com/charts/charts/gitlab/sidekiq
-  #   sidekiq:
-  #     enabled: false
+  webservice:
+    hpa:
+      maxReplicas: 1
+      minReplicas: 1
+  sidekiq:
+    hpa:
+      maxReplicas: 1
+      minReplicas: 1
+  gitlab-shell:
+    hpa:
+      maxReplicas: 1
+      minReplicas: 1
   ## https://docs.gitlab.com/charts/charts/gitlab/gitaly
   #   gitaly:
   ## https://docs.gitlab.com/charts/charts/gitlab/gitlab-shell
