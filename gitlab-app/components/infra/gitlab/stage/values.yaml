@@ -491,10 +491,10 @@ global:
       #   key:
 
     ## https://docs.gitlab.com/charts/charts/globals#kas-settings
-    gitlab_kas: {}
+    gitlab_kas:
       # secret:
       # key:
-      # enabled:
+      enabled: false
       # externalUrl:
       # internalUrl:
 
