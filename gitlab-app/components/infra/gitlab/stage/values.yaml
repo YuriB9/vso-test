@@ -139,7 +139,7 @@ global:
       # file:
     host: postgresql.storage.svc.cluster.local #REVIEW
     port: 5432
-    username: gitlab
+    username: postgres
     database: appdb
     # applicationName:
     # preparedStatements: false
