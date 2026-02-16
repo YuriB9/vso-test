@@ -1359,17 +1359,14 @@ gitlab:
       matchLabels:
         app: gitaly
   webservice:
-    hpa:
-      maxReplicas: 1
-      minReplicas: 1
+    minReplicas: 1
+    maxReplicas: 1
   sidekiq:
-    hpa:
-      maxReplicas: 1
-      minReplicas: 1
+    minReplicas: 1
+    maxReplicas: 1
   gitlab-shell:
-    hpa:
-      maxReplicas: 1
-      minReplicas: 1
+    minReplicas: 1
+    maxReplicas: 1
   ## https://docs.gitlab.com/charts/charts/gitlab/gitaly
   #   gitaly:
   ## https://docs.gitlab.com/charts/charts/gitlab/gitlab-shell
