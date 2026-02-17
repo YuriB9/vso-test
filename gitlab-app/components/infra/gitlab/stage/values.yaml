@@ -379,7 +379,7 @@ global:
         # secret:
         # key:
     packages:
-      enabled: true
+      enabled: false
       proxy_download: true
       bucket: gitlab-packages
       connection: {}
@@ -406,6 +406,9 @@ global:
     backups:
       bucket: gitlab-backups
       tmpBucket: gitlab-tmp
+      connection:
+        secret: s3-creds
+        key: connection
 
     ## https://docs.gitlab.com/charts/charts/globals#outgoing-email
     ## Microsoft Graph Mailer settings
