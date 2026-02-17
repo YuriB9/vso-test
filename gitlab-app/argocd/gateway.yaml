@@ -15,3 +15,10 @@ spec:
     - "argocd.local"
     - "vault.local"
     - "gitlab.local"
+    - "seaweeds.local"
+  - port:
+      number: 22
+      name: ssh
+      protocol: TCP
+    hosts:
+    - "gitlab.local"

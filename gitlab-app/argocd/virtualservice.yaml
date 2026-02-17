@@ -17,3 +17,44 @@ spec:
         host: k3s-gitlab-stage-webservice-default.gitlab-stage.svc.cluster.local
         port:
           number: 8181
+---
+
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: seaweeds-vs
+  namespace: gitlab-stage
+spec:
+  hosts:
+  - "seaweeds.local"
+  gateways:
+  - istio-system/main-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: seaweedfs-filer.storage.svc.cluster.local
+        port:
+          number: 8888
+---
+
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: gitlab-ssh-vs
+  namespace: gitlab-stage
+spec:
+  hosts:
+  - "gitlab.local"
+  gateways:
+  - istio-system/main-gateway
+  tcp:
+  - match:
+    - port: 22
+    route:
+    - destination:
+        host: k3s-gitlab-stage-gitlab-shell.gitlab-stage.svc.cluster.local
+        port:
+          number: 22
