@@ -361,23 +361,23 @@ global:
       enabled: true
       proxy_download: true
       bucket: git-lfs
-      connection: {}
-        # secret:
-        # key:
+      connection:
+        secret: s3-creds
+        key: connection
     artifacts:
       enabled: true
       proxy_download: true
       bucket: gitlab-artifacts
-      connection: {}
-        # secret:
-        # key:
+      connection:
+        secret: s3-creds
+        key: connection
     uploads:
       enabled: true
       proxy_download: true
       bucket: gitlab-uploads
-      connection: {}
-        # secret:
-        # key:
+      connection:
+        secret: s3-creds
+        key: connection
     packages:
       enabled: false
       proxy_download: true
@@ -406,9 +406,6 @@ global:
     backups:
       bucket: gitlab-backups
       tmpBucket: gitlab-tmp
-      connection:
-        secret: s3-creds
-        key: connection
 
     ## https://docs.gitlab.com/charts/charts/globals#outgoing-email
     ## Microsoft Graph Mailer settings
