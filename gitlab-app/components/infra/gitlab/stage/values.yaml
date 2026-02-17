@@ -354,9 +354,9 @@ global:
       storage_options: {}
         # server_side_encryption:
         # server_side_encryption_kms_key_id
-      connection:
-        secret: s3-creds #REVIEW
-        key: connection
+      connection: {}
+        #secret: s3-creds #REVIEW
+        #key: connection
     lfs:
       enabled: true
       proxy_download: true
