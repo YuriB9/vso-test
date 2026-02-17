@@ -361,23 +361,14 @@ global:
       enabled: true
       proxy_download: true
       bucket: git-lfs
-      connection:
-        secret: s3-creds
-        key: connection
     artifacts:
       enabled: true
       proxy_download: true
       bucket: gitlab-artifacts
-      connection:
-        secret: s3-creds
-        key: connection
     uploads:
       enabled: true
       proxy_download: true
       bucket: gitlab-uploads
-      connection:
-        secret: s3-creds
-        key: connection
     packages:
       enabled: false
       proxy_download: true
@@ -1358,6 +1349,12 @@ gitlab:
     antiAffinityLabels:
       matchLabels:
         app: gitaly
+    backups:
+      objectStorage:
+        backend: s3
+        config:
+          secret: s3-backup-creds
+          key: config
   webservice:
     minReplicas: 1
     maxReplicas: 1
